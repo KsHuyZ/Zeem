@@ -23,7 +23,7 @@ app.get('/:room',(req,res)=>{
     res.render('room',{roomId:req.params.room})
 })
 const PORT = process.env.PORT
-server.listen(PORT,()=>{
+server.listen(PORT||3000,()=>{
     console.log('Server start on port '+ PORT)
 })
 
