@@ -3,7 +3,7 @@ const videoGrid = document.getElementById("video-grid")
 const peer = new Peer(undefined, {
   path: "peerjs",
   host: "/",
-  port: "433",
+  port: "443",
 })
 
 let peerId
@@ -22,7 +22,7 @@ const myVideo = document.createElement("video")
 myVideo.muted = true
 
 peer.on("open", (id) => {
-  
+  console.log('hello world')
   
    socket.emit("join-room", ({roomId:ROOM_ID,profile,idpeer:id}))
    socket.on('list-user',(result)=>{
