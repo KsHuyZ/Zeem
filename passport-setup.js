@@ -16,7 +16,7 @@ passport.deserializeUser((user,done)=>{
 passport.use(new GoogleStrategy({
     clientID: "61028295198-u76d8h2hhs3q81msfkudc6hepcvn9i4m.apps.googleusercontent.com",
     clientSecret: "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",
-    callbackURL: "http://localhost:3000/login/google/callback"
+    callbackURL: "https://mysterious-spire-07069.herokuapp.com/login/google/callback"
   },
   function( accessToken, refreshToken, profile, done) {
       // use the profile infor (mainly profile id) if the user is register in ur db
