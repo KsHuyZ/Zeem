@@ -1,0 +1,176 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #202124;
+    font-family: 'Nunito', sans-serif;
+}
+.container{margin: 17px;}
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .left{
+    width: 199px;
+    display: flex;
+}
+.left img{
+
+    width: 100%;
+}
+.left span{
+    font-size: 25px;
+   
+    margin-left: 30px;
+    color: #adadad;
+}
+.left .namel{
+   
+    margin: auto;
+}
+.header .right{
+    width: 22%;
+    /* text-align: right; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header .right .login{
+    text-decoration: none;
+    /* margin: auto; */
+    /* width: 200px; */
+    border-radius: 37px;
+    border: 1px solid #adadad;
+    color: #adadad;
+    padding: 7px 43px;
+    transition: 1s;
+    cursor: pointer;
+}
+.header .right .user{
+    text-decoration: none;
+    /* margin: auto; */
+    display: flex;
+    /* width: 200px; */
+    border-radius: 37px;
+    color: #adadad;
+    padding: 22px 31px;
+    /* transition: 1s; */
+    cursor: pointer;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+.header .right .user .name-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+   .header .right img{
+            width: 39px;
+    border-radius: 29px;
+    margin-left: 10px;
+    }
+.header .right .login:hover{
+    background-color: #adadad;
+    color: #202124;
+    
+}
+.mid{
+display: flex;
+margin-top: 25px;
+}
+.mid .right{width: 50%;display: flex;flex-direction: column;justify-content: space-around;}
+.mid .right .bigsize{
+    font-size: 28px;
+    color: white
+}
+.mid .right .smallsize{
+    font-size: 18px;
+    color: #adadad;
+    margin-top: 30px;
+}
+.room{
+    display: flex;
+    /* margin-top: 30px; */
+}
+.room .create{
+    justify-content: center;
+    align-items: center;
+    align-self: end;
+}
+.room button{
+    transition: 1s;
+    background-color: transparent;
+    border-radius: 37px;
+    border: 1px solid #adadad;
+    color: #adadad;
+    padding: 15px;
+    cursor: pointer;
+}
+.room button:hover{
+    background-color: #adadad;
+    color: #202124;
+}
+.room .join{
+    position: relative;
+    border-bottom: 1px solid #adadad;
+    margin: 30px 0 0 20px;
+}
+.room .join span::before{
+    content: '';
+position: absolute;
+top: 40px;left: 0;
+width: 0%;
+height: 2px;
+background:#adadad;
+transition: .6s;
+}
+.join input{
+    color: white;
+}
+.join input:focus ~label,
+.join input:valid ~label{
+    top: -2px;
+    color: #adadad;
+}
+
+.room .join label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font: size 16px;
+    pointer-events: none;
+    transition: .6s;
+}
+.room .join input{
+    border: none;
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    outline: none;
+    font-size:16px;
+    background: rgba(0,0,0,0);
+    border-bottom: #adadad;
+    /* margin-left: 30px;
+outline:  none;
+border: 1px solid;
+border-radius: 37px;
+padding: 15px; */
+}
+.room .join-room{
+   
+    margin: 30px 0 0 22px;
+    color: #adadad;
+    display: none;
+    /* color: #0099ff; */
+}
+.left-image{
+    width: 50%;
+    text-align: center;
+}
+.left-image img{
+    width: 89%;
+}

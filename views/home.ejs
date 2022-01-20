@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="socket.io/socket.io.js"></script>
+    <%  if(typeof user !=='undefined'){ %> 
+    <script>
+       
+            const idUser = "<%=user.id %>"
+      
+    
+    </script>
+    <% } %> 
+    <link rel = "icon" href = 
+    "images/callicon.png" 
+            type = "image/x-icon">
+    <title>Zeem</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+         <div class="left">
+            <div class="logo">
+                <img src="images/callicon.png" alt="">
+            </div>
+          <div class="namel">
+            <span>Zeem</span>
+          </div>
+         </div>
+       
+         <div class="right">
+            <div class="donate">
+                <form action="/paypal/pay" method="post">
+                    <input type="submit" value="Donate">
+                </form>
+            </div>
+             <% if(typeof user==='undefined'){ %> 
+                <a href="/login/google" class="login">Login</a>
+                <%  }else{ %>
+                     <div class="user">
+<div class="name-user">Hello, <%=user.name.givenName%> </div>
+<img src="<%= user.photos[0].value %> " alt="">
+    </div> 
+   
+             <% } %> 
+         </div>
+        </div>
+        <div class="mid">
+          
+            <div class="right">
+                <div class="bigsize">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ipsa hic alias error iusto optio minus perferendis amet nulla sint similique, ad vero dicta odio autem magnam! Sit</span>
+                </div>
+                <div class="smallsize">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, praesentium rerum nobis voluptatem nesciunt esse vitae sunt dolore sapiente cumque laborum delectus dignissimos impedit
+                </div>
+                <div class="room">
+                    <div class="create">
+                        <button>Create new room</button>
+                    </div>
+                    <div class="join">
+                        <input type="text" required focus="enterCodex`" class="join-code">
+                        <span></span>
+                       <label for="">Type code to join room</label>
+                    </div>
+                    <p class="join-room">
+                        Join
+                    </p>
+                </div>
+            </div>
+            <div class="left-image">
+                <img src="images/undraw_group_video_re_btu7.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
