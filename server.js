@@ -70,7 +70,7 @@ io.on("connection", (socket) => {
       socket.on("send-message", (message) => {
         console.log("get socket emit")
 
-        io.to(roomId).emit("get-message", {
+       io.to(roomId).emit("get-message", {
           message,
           idUser: profile.userId,
           urlImage: profile.userImage,

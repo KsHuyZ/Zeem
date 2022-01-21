@@ -3,9 +3,9 @@ const express = require('express')
 const paypalRouter = express.Router()
 
 paypal.configure({
-    'mode': 'sandbox', //sandbox or live
-    'client_id': 'AS622L2fp8OX3RngScZZiD_Te8wd0qgyfve9N6wUTe3ZAA3fKMI6VI6oF5ro--OpZznKdVLz7pkI3FxM',
-    'client_secret': 'ECqBKcFyL2jSldRv9KVTRHH20dOdqlzC8atzgdeqFRVyWpPAwwn4ZYjd4d5x9haYgGsirmY3T-TP0sCf'
+    'mode': 'live', //sandbox or live
+    'client_id': 'AdK17DGpBwPAGbTeBcFseupca3-CjTCjvRzxBngTHL98jaA0D8CMnKo5_kQJiQVIBAyOJ076C8Xag7Gu',
+    'client_secret': 'EAJoKDr5sIpTPA5DSLoiqCSJbGaNrmy9PQ2kq7ruLbRzhmbEUaeKfkrc9-9690bCSAv3K4hwzRkAtwjY'
   });
 
   paypalRouter.post('/pay',(req,res)=>{
@@ -15,8 +15,8 @@ paypal.configure({
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://localhost:3000/paypal/success",
-            "cancel_url": "http://localhost:3000/paypal/failed"
+            "return_url": "https://mysterious-spire-07069.herokuapp.com/success",
+            "cancel_url": "https://mysterious-spire-07069.herokuapp.com/failed"
         },
         "transactions": [{
             "item_list": {
@@ -67,8 +67,7 @@ paypal.configure({
             console.log(error.response);
             throw error;
         } else {
-            console.log("Get Payment Response");
-            console.log(JSON.stringify(payment));
+          res.redirect('/')
         }
     });
   })

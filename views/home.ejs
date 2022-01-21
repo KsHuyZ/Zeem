@@ -34,11 +34,13 @@
          <div class="right">
             <div class="donate">
                 <form action="/paypal/pay" method="post">
-                    <input type="submit" value="Donate">
+                    
+                    <button id="donate" type="submit"> Donate <img src="/images/paypal-3384015.svg" alt=""></button>
+                  
                 </form>
             </div>
              <% if(typeof user==='undefined'){ %> 
-                <a href="/login/google" class="login">Login</a>
+                <a href="/login/google" class="login"><img src="/images/gg.png" alt=""> Login</a>
                 <%  }else{ %>
                      <div class="user">
 <div class="name-user">Hello, <%=user.name.givenName%> </div>

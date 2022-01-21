@@ -21,8 +21,8 @@ socket.on('error-room',()=>{
 const myVideo = document.createElement("video")
 myVideo.muted = true
 
-peer.on("open", (id) => {
-  console.log('hello world')
+peer.on("open",  (id) => {
+  console.log('You are join this fucking room')
   
    socket.emit("join-room", ({roomId:ROOM_ID,profile,idpeer:id}))
    socket.on('list-user',(result)=>{
@@ -53,23 +53,24 @@ navigator.mediaDevices
     addVideoStream(myVideo, stream)
     peer.on("call", (call) => {
      
-      call.answer(stream) // Answer the call with an A/V stream.
+     call.answer(stream) // Answer the call with an A/V stream.
       const video = document.createElement("video")
     
       call.on("stream", userVideoStream => {
-        addVideoStream(video, userVideoStream)
+         addVideoStream(video, userVideoStream)
       })
     })
-
     socket.on("user-connected", ({userId,idpeer}) => {
      
-     setTimeout(()=>{
-      connectToNewUser(idpeer, stream)
-     },1000)
-     console.log(idpeer)
+      console.log('from socket new user conect',idpeer)
     
+   setTimeout(()=>{
+    connectToNewUser(idpeer, stream)
+   },1000)
+     
     })
   })
+
   .catch((error)=>{
     console.log(error)
   })
